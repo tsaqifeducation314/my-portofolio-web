@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa'
-import profpic from "my-porto/src/assets/profile-picture.jpg" 
+import profpic from "https://drive.google.com/file/d/14dOqdAO-YQ8PbieKDGb-yxuegntBRgCV/view?usp=sharing" 
 
 const personalData = {
   name: "Nayaka Tsaqif R. S",
