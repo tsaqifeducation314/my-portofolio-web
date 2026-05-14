@@ -1,7 +1,6 @@
 import React from 'react'
 import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa'
 
-// ✅ GANTI DENGAN DATA ANDA
 const personalData = {
   name: "Nayaka Tsaqif R. S",
   role: "IT Undergraduate - Gadjah Mada University",

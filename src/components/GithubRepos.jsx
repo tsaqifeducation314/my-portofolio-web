@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { FaGithub, FaStar, FaCodeBranch, FaCalendarAlt, FaExclamationCircle } from 'react-icons/fa'
 
-// GANTI DENGAN USERNAME GITHUB ANDA
 const GITHUB_USERNAME = "tsaqifeducation314"
 
 const GithubRepos = () => {
@@ -15,12 +14,10 @@ const GithubRepos = () => {
       try {
         setLoading(true)
         
-        // Fetch user data for dashboard
         const userResponse = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}`)
         if (!userResponse.ok) throw new Error('User not found')
         const user = await userResponse.json()
         
-        // Fetch repositories
         const reposResponse = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=6`)
         const reposData = await reposResponse.json()
         
@@ -36,7 +33,6 @@ const GithubRepos = () => {
     fetchGithubData()
   }, [])
 
-  // Hitung statistik untuk dashboard
   const totalStars = repos.reduce((acc, repo) => acc + (repo.stargazers_count || 0), 0)
   const totalForks = repos.reduce((acc, repo) => acc + (repo.forks_count || 0), 0)
 
@@ -68,7 +64,6 @@ const GithubRepos = () => {
   return (
     <section id="github" className="py-20">
       <div className="container mx-auto px-4 max-w-6xl">
-        {/* Header Repository */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-linear-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
             Repository GitHub
@@ -84,7 +79,6 @@ const GithubRepos = () => {
           </div>
         </div>
 
-        {/* Repository List */}
         <div className="grid md:grid-cols-2 gap-6 mb-16">
           {repos.map((repo) => (
             <div key={repo.id} 
@@ -125,7 +119,6 @@ const GithubRepos = () => {
           ))}
         </div>
 
-        {/* GitHub Dashboard - Stats Section */}
         <div className="mt-8 pt-8 border-t-2 border-gray-200 dark:border-gray-700">
           <div className="text-center mb-8">
             <h3 className="text-2xl md:text-3xl font-bold mb-2 bg-linear-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
@@ -136,7 +129,6 @@ const GithubRepos = () => {
             </p>
           </div>
 
-          {/* Stats Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
             <div className="bg-white dark:bg-gray-800 rounded-xl p-6 text-center shadow-md hover:shadow-xl transition">
               <div className="text-3xl font-bold text-blue-600">{userData.public_repos}</div>
@@ -159,7 +151,6 @@ const GithubRepos = () => {
             </div>
           </div>
 
-          {/* Additional Stats */}
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md">
               <h4 className="font-bold text-lg mb-4 text-white dark:text-white">Repository Stats</h4>

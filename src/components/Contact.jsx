@@ -17,22 +17,19 @@ const Contact = () => {
     })
   }
 
-  // ✅ Tambahkan kata kunci "async" di sini
   const handleSubmit = async (e) => {
     e.preventDefault()
     setIsLoading(true)
     setError('')
 
-    // Data yang akan dikirim ke Web3Forms
     const formPayload = new FormData()
-    formPayload.append('access_key', 'f6fdab54-3db6-495f-a772-e3683cbb7d63') // Ganti dengan access key Anda
+    formPayload.append('access_key', 'f6fdab54-3db6-495f-a772-e3683cbb7d63') 
     formPayload.append('name', formData.name)
     formPayload.append('email', formData.email)
     formPayload.append('message', formData.message)
     formPayload.append('subject', `Pesan dari ${formData.name} - Portfolio Website`)
 
     try {
-      // ✅ Sekarang await bisa digunakan karena fungsi sudah async
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         body: formPayload
@@ -135,7 +132,6 @@ const Contact = () => {
           </button>
         </form>
 
-        {/* Success Toast */}
         {isSubmitted && (
           <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-6 py-3 rounded-full shadow-lg flex items-center gap-2 animate-bounce z-50">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

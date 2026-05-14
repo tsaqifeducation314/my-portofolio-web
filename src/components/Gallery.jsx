@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 
 
 const Gallery = () => {
-  // Daftar gambar random dari internet (Unsplash random images)
   const images = [
     {
       id: 1,
@@ -33,21 +32,18 @@ const Gallery = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0)
 
-  // Fungsi untuk navigasi ke gambar sebelumnya
   const prevSlide = () => {
     setCurrentIndex((prevIndex) => 
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     )
   }
 
-  // Fungsi untuk navigasi ke gambar berikutnya
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => 
       prevIndex === images.length - 1 ? 0 : prevIndex + 1
     )
   }
 
-  // Fungsi untuk langsung ke gambar tertentu (opsional)
   const goToSlide = (index) => {
     setCurrentIndex(index)
   }
@@ -55,7 +51,6 @@ const Gallery = () => {
   return (
     <section id="galeri" className="py-20 bg-linear-to-br from-blue-50 to-blue-100 dark:from-gray-800 dark:to-gray-900 rounded-xl">
       <div className="container mx-auto px-4 max-w-6xl">
-        {/* Header Section */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-linear-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
             Galeri Foto
@@ -65,11 +60,8 @@ const Gallery = () => {
           </p>
         </div>
 
-        {/* Carousel Container */}
         <div className="relative group">
-          {/* Main Image Container */}
           <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-gray-900">
-            {/* Image */}
             <div className="relative aspect-16/10 md:aspect-video">
               <img
                 src={images[currentIndex].url}
@@ -77,10 +69,8 @@ const Gallery = () => {
                 className="w-full h-full object-cover transition-all duration-500 ease-in-out"
               />
               
-              {/* Overlay Gradient */}
               <div className="absolute inset-0 bg-linear-to-t from-black/50 via-transparent to-transparent"></div>
               
-              {/* Image Info */}
               <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                 <h3 className="text-2xl md:text-3xl font-bold mb-2">
                   {images[currentIndex].title}
@@ -91,7 +81,6 @@ const Gallery = () => {
               </div>
             </div>
 
-            {/* Tombol Panah Kiri */}
             <button
               onClick={prevSlide}
               className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -112,7 +101,6 @@ const Gallery = () => {
               </svg>
             </button>
 
-            {/* Tombol Panah Kanan */}
             <button
               onClick={nextSlide}
               className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -134,7 +122,6 @@ const Gallery = () => {
             </button>
           </div>
 
-          {/* Indikator / Thumbnail Navigation */}
           <div className="flex justify-center gap-2 mt-6">
             {images.map((_, index) => (
               <button
@@ -150,13 +137,11 @@ const Gallery = () => {
             ))}
           </div>
 
-          {/* Counter */}
           <div className="text-center mt-4 text-sm text-gray-600 dark:text-gray-400">
             {currentIndex + 1} / {images.length}
           </div>
         </div>
 
-        {/* Gallery Grid Preview (Opsional) */}
         <div className="mt-12">
           <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-4 text-center">
             Galeri Lainnya

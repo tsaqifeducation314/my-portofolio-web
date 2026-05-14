@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
 import './index.css'
 
-// Import komponen
 import Header from './components/Header'
 import Hero from './components/Hero'
-import Gallery from './components/Gallery'  // ✅ Tambahkan import Gallery
+import Gallery from './components/Gallery'  
 import GithubRepos from './components/GithubRepos'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
@@ -18,7 +17,7 @@ function App() {
         <Header darkMode={darkMode} setDarkMode={setDarkMode} />
         <main className="container mx-auto px-4 py-8 max-w-6xl">
           <Hero />
-          <Gallery />        {/* ✅ Tambahkan komponen Gallery di sini */}
+          <Gallery />        
           <GithubRepos />
           <Contact />
         </main>
