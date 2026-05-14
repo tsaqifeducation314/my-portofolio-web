@@ -1,12 +1,13 @@
 import React from 'react'
 import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa'
+import profpic from "D:/TSAQIF/PROGRAMMING/WEB_DEV/my-porto/src/assets/profile-picture.jpg"
 
 const personalData = {
   name: "Nayaka Tsaqif R. S",
   role: "IT Undergraduate - Gadjah Mada University",
   bio: "Mahasiswa Program Studi S1 Teknologi Informasi Universitas Gadjah Mada, saat ini menempuh studi pada tahun pertama. Memiliki pengalaman organisasi dan kepemimpinan yang mumpuni melalui kegiatan Kepramukaan. Menunjukkan minat pada bidang sains dan teknologi yang dibuktikan dengan pencapaian sebagai pemenang dalam beberapa kompetisi.",
 //   avatar: "https://ui-avatars.com/api/?background=1e88e5&color=fff&rounded=true&size=150&bold=true&name=" + encodeURIComponent("Nayaka Setiaji"),
-  avatar: "/src/assets/profile-picture.jpg",
+  avatar: profpic,
   email: "tsaqifeducation314@gmail.com",
   phone: "+62 812 2673 7053",
   location: "Yogyakarta, Indonesia",
