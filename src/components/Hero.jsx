@@ -6,7 +6,7 @@ const personalData = {
   role: "IT Undergraduate - Gadjah Mada University",
   bio: "Mahasiswa Program Studi S1 Teknologi Informasi Universitas Gadjah Mada, saat ini menempuh studi pada tahun pertama. Memiliki pengalaman organisasi dan kepemimpinan yang mumpuni melalui kegiatan Kepramukaan. Menunjukkan minat pada bidang sains dan teknologi yang dibuktikan dengan pencapaian sebagai pemenang dalam beberapa kompetisi.",
   // avatar: "https://ui-avatars.com/api/?background=1e88e5&color=fff&rounded=true&size=150&bold=true&name=" + encodeURIComponent("Nayaka Setiaji"),
-  avatar: "src/assets/profile-picture.jpg",
+  // avatar: "src/assets/profile-picture.jpg",
   email: "tsaqifeducation314@gmail.com",
   phone: "+62 812 2673 7053",
   location: "Yogyakarta, Indonesia",
@@ -17,6 +17,8 @@ const personalData = {
   }
 }
 
+const profpic = "src/assets/profile-picture.jpg"
+
 const Hero = () => {
   return (
     <section id="beranda" className="min-h-screen flex items-center justify-center py-20">
@@ -25,7 +27,7 @@ const Hero = () => {
           <div className="relative">
             <div className="absolute inset-0 bg-linear-to-r from-blue-400 to-blue-600 rounded-full blur-2xl opacity-50"></div>
             <img 
-              src={personalData.avatar} 
+              src={profpic} 
               alt={personalData.name}
               className="relative w-40 h-40 md:w-48 md:h-48 rounded-full border-4 border-white dark:border-gray-700 shadow-xl object-cover object-top-right"
             />
